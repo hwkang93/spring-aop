@@ -24,10 +24,13 @@ public class MethodInfoAopConfig {
             throwing = "exception"
     )
     void afterThrowing(JoinPoint joinPoint, Exception exception) {
-        if(exception instanceof NullPointerException) {
-            String methodName = joinPoint.getSignature().getName();
+        String methodName = joinPoint.getSignature().getName();
 
-            log.info(" [ " + methodName + " ] start");
+        if(exception instanceof NullPointerException) {
+            log.error(" [ " + methodName + " ] NullPointerException occurred.");
+        }
+        else {
+            log.error(" [ " + methodName + " ] etc Exception occurred.", exception.getMessage());
         }
     }
 }
