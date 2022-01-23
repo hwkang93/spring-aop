@@ -19,5 +19,9 @@ public class MethodInfoAopTest {
         userService.findByUserId(1);
     }
 
+    @Test
+    @DisplayName("사용자가 없는 경우 NullPointerException 발생")
+    void throwNullPointerException() {
 
+    }
 }
