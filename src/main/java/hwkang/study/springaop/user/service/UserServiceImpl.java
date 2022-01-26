@@ -1,5 +1,6 @@
 package hwkang.study.springaop.user.service;
 
+import hwkang.study.springaop.annotation.ExecutionTime;
 import hwkang.study.springaop.user.data.UserDto;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,7 @@ public class UserServiceImpl implements UserService{
     );
 
     @Override
+    @ExecutionTime
     public UserDto findByUserId(long userId) {
         return userList.stream()
                 .filter(userDto -> userDto.getUserId() == userId)
@@ -27,6 +29,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
+    @ExecutionTime
     public List<UserDto> findListByUserName(String userName) {
         return userList.stream()
                 .filter(userDto -> userDto.getUserName().contains(userName))
