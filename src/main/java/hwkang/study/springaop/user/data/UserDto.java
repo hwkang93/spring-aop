@@ -6,6 +6,10 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class UserDto {
-    long userId;
-    String userName;
+
+    //사용자 ID
+    private long userId;
+
+    //사용자 명
+    private String userName;
 }

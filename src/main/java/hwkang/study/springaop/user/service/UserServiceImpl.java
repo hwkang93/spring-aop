@@ -11,9 +11,9 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
-    List<UserDto> userList = Arrays.asList(
+    final List<UserDto> userList = Arrays.asList(
             new UserDto(1, "khw"),
             new UserDto(2, "chr"),
             new UserDto(3, "kjh")
@@ -26,13 +26,5 @@ public class UserServiceImpl implements UserService{
                 .filter(userDto -> userDto.getUserId() == userId)
                 .findFirst()
                 .orElseThrow(() -> new NullPointerException());
-    }
-
-    @Override
-    @ExecutionTime
-    public List<UserDto> findListByUserName(String userName) {
-        return userList.stream()
-                .filter(userDto -> userDto.getUserName().contains(userName))
-                .collect(Collectors.toList());
     }
 }
