@@ -16,7 +16,7 @@ public class MethodInfoAopConfig {
     void before(JoinPoint joinPoint) {
         String methodName = joinPoint.getSignature().getName();
 
-        log.info(" [ " + methodName + " ] start");
+        log.info(" [ UserServiceImpl." + methodName + " ] start");
     }
 
     @AfterThrowing(

@@ -27,7 +27,7 @@ public class ExecutionTimeAopConfig {
 
         long executionTime = stopWatch.getTotalTimeMillis();
 
-        log.info(" [ " + stopWatch.getId() + " ] execution time is " + executionTime + " ms.");
+        log.info(" [ " + stopWatch.getId() + " ] execution time is [ " + executionTime + " ] ms.");
 
         return result;
     }
