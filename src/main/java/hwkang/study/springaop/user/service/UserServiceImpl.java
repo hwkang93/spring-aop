@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
     );
 
     @Override
-    //@ExecutionTime
+    @ExecutionTime
     public UserDto findByUserId(long userId) {
         return userList.stream()
                 .filter(userDto -> userDto.getUserId() == userId)
